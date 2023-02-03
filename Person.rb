@@ -3,7 +3,6 @@ require './base_decorator'
 require './capitalize_decorator'
 require './trimmer_decorator'
 
-
 class Person < Nameable
   def initialize(name, age = 'Unknown', parent_permission: true)
     super()
@@ -32,7 +31,6 @@ class Person < Nameable
     @name
   end
 end
-
 
 person = Person.new(22, 'maximilianus')
 person.correct_name
