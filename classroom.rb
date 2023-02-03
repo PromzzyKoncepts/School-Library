@@ -1,4 +1,4 @@
-class classroom 
+class Classroom
   attr_accessor :label
   attr_reader :students
 
@@ -11,5 +11,4 @@ class classroom
     @students.push(students)
     student.classroom << self
   end
-  
 end
