@@ -11,6 +11,7 @@ class Person < Nameable
     @age = age
     @parent_permission = parent_permission
   end
+  
   attr_reader :id
   attr_accessor :name, :age
 
