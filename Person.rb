@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './nameable'
 require './base_decorator'
 require './capitalize_decorator'

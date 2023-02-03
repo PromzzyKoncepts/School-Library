@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './nameable'
 class BaseDecorator < Nameable
   def initialize(nameable)
