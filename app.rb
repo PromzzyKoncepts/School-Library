@@ -7,7 +7,7 @@ require './classroom'
 
 class App
   def initialize
-    @book = []
+    @books = []
     @persons = []
     @rental = []
   end
@@ -26,8 +26,8 @@ class App
   end
 
   def list_all_books
-    puts 'Database is empty! Add a book.' if @book.empty?
-    @book.each { |book| puts "[Book] Title: #{book.title}, Author: #{book.author}" }
+    puts 'Database is empty! Add a book.' if @books.empty?
+    @books.each { |book| puts "[Book] Title: #{book.title}, Author: #{book.author}" }
   end
 
   def list_all_persons
@@ -89,13 +89,13 @@ class App
     print 'Enter author: '
     author = gets
     book = Book.new(title, author)
-    @book.push(book)
+    @books.push(book)
     puts "Book #{title} created successfully."
   end
 
   def create_rental
     puts 'Select which book you want to rent by entering its number'
-    @book.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
+    @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
 
     book_id = gets.chomp.to_i
 
@@ -107,8 +107,8 @@ class App
     person_id = gets.chomp.to_i
 
     print 'Date: '
-    date = gets.chomp.to_i
-    rental = Rental.new(date, @book[book_id], @persons[person_id])
+    date = gets.chomp.to_s
+    rental = Rental.new(date, @books[book_id], @persons[person_id])
     @rental << rental
 
     puts 'Rental created successfully'
