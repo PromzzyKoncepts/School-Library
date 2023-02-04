@@ -1,5 +1,5 @@
-require "./book"
-require "./persons"
+require './book'
+require './persons'
 
 class Rental
   attr_accessor :date
