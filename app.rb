@@ -1,22 +1,22 @@
-require "./book.rb"
-require "./persons"
-require "./rental"
-require "./student"
-require "./teacher"
-require "./classroom"
+require './book'
+require './persons'
+require './rental'
+require './student'
+require './teacher'
+require './classroom'
 
 class App
-
   def initialize
     @book = []
     @persons = []
-    rentals = []
+    @rentals = []
   end
+
   def open_console
-    puts "Hello There, Welcome to our School library"
+    puts 'Hello There, Welcome to our School library'
     until list_of_options
-    input = gets.chomp
-     if input == '7'
+      input = gets.chomp
+      if input == '7'
         puts 'Thank You for using my School Library!'
         break
       end
@@ -129,5 +129,4 @@ class App
       end
     end
   end
-
 end
