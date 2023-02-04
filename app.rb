@@ -1,15 +1,15 @@
 require './book'
 require './persons'
 require './rental'
-require './student'
-require './teacher'
+require './students'
+require './teachers'
 require './classroom'
 
 class App
   def initialize
     @book = []
     @persons = []
-    @rentals = []
+    @rental = []
   end
 
   def open_console
@@ -77,7 +77,7 @@ class App
     name = gets.chomp
     print 'Enter teacher specialization: '
     specialization = gets.chomp
-    teacher = Teacher.new(specialization, age, name)
+    teacher = Teacher.new(age, name, specialization)
     @persons.push(teacher)
     puts 'Teacher created successfully'
   end
@@ -107,9 +107,9 @@ class App
     person_id = gets.chomp.to_i
 
     print 'Date: '
-    date = gets.chomp.to_s
+    date = gets.chomp.to_i
     rental = Rental.new(date, @book[book_id], @persons[person_id])
-    @rentals << rental
+    @rental << rental
 
     puts 'Rental created successfully'
   end
@@ -119,7 +119,7 @@ class App
     id = gets.chomp.to_i
 
     puts 'Rented Books:'
-    @rentals.each do |rental|
+    @rental.each do |rental|
       if rental.person.id == id
         puts "Person: #{rental.person.name} Date: #{rental.date}, Book: '#{rental.book.title}' by #{rental.book.author}"
 

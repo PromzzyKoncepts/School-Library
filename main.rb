@@ -2,7 +2,7 @@ require './app'
 
 def main
   app = App.new
-  app.start_console
+  app.open_console
 end
 
 def list_of_options
