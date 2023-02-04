@@ -47,11 +47,9 @@
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+- **Add new students or teachers.**
+- **Add new books.**
+- **Save records of who borrowed a given book and when.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -141,9 +139,8 @@ To run tests, run the following command:
 
 > Describe 1 - 3 features you will add to the project.
 
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **Add more classes and associations**
+- [ ] **increase the options on start to make the UI more interactive**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
