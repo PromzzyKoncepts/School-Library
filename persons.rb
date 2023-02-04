@@ -1,8 +1,7 @@
-require './nameable'
 require './base_decorator'
-require './capitalize_decorator'
+require './nameable'
 require './trimmer_decorator'
-
+require './capitalize_decorator'
 
 class Person < Nameable
   def initialize(name, age = 'Unknown', parent_permission: true)
@@ -14,7 +13,7 @@ class Person < Nameable
   end
 
   attr_reader :id
-  attr_accessor :name, :age
+  attr_accessor :name, :age, :rental
 
   private
 
@@ -31,8 +30,11 @@ class Person < Nameable
   def correct_name
     @name
   end
-end
 
+  def add_rental(book, date)
+    Rental.new(date, book, self)
+  end
+end
 
 person = Person.new(22, 'maximilianus')
 person.correct_name
