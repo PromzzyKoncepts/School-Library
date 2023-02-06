@@ -87,7 +87,7 @@ class App
     print 'Enter title: '
     title = gets.chomp
     print 'Enter author: '
-    author = gets
+    author = gets.chomp
     book = Book.new(title, author)
     @books.push(book)
     puts "Book #{title} created successfully."
@@ -124,7 +124,6 @@ class App
         puts "Person: #{rental.person.name} Date: #{rental.date}, Book: '#{rental.book.title}' by #{rental.book.author}"
 
       else
-        puts
         puts 'No records where found for the given ID'
       end
     end
