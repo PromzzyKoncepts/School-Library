@@ -5,13 +5,14 @@ class Student < Person
     @classroom = classroom
     super(age, name, parent_permission: parent_permission)
   end
-  # attr_reader :classroom
+
+  attr_reader :classroom
 
   def play_hooky
     puts '¯(ツ)/¯'
   end
 
-  def classroom
+  def classroom=(classroom)
     classroom.students.push(self) unless classroom.students.include?(self)
   end
 end
