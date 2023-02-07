@@ -32,7 +32,9 @@ class App
 
   def list_all_persons
     puts 'Database is empty! Add a person.' if @persons.empty?
-    @persons.each { |person| puts "[#{person.class.name}] Name: #{person.name}, Age: #{person.age}, id: #{person.id}" }
+    @persons.each do |person|
+      puts "[#{person.class.name}] Name: #{person.name}, Age: #{person.age}, id: #{person.id}"
+    end
   end
 
   def create_person
@@ -87,7 +89,7 @@ class App
     print 'Enter title: '
     title = gets.chomp
     print 'Enter author: '
-    author = gets
+    author = gets.chomp
     book = Book.new(title, author)
     @books.push(book)
     puts "Book #{title} created successfully."
@@ -95,7 +97,9 @@ class App
 
   def create_rental
     puts 'Select which book you want to rent by entering its number'
-    @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
+    @books.each_with_index do |book, index|
+      puts "#{index}) Title: #{book.title}, Author: #{book.author}"
+    end
 
     book_id = gets.chomp.to_i
 
@@ -122,9 +126,7 @@ class App
     @rental.each do |rental|
       if rental.person.id == id
         puts "Person: #{rental.person.name} Date: #{rental.date}, Book: '#{rental.book.title}' by #{rental.book.author}"
-
       else
-        puts
         puts 'No records where found for the given ID'
       end
     end
