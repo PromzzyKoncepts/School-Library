@@ -22,9 +22,7 @@ class Listings
     end
     puts 'List of available books:'
     puts ''
-    @books.each_with_index do |item, i|
-      puts "#{i} Title: #{item.title}, Author: #{item.author}"
-    end
+    @books.each_with_index { |item, i| puts "#{i} Title: #{item.title}, Author: #{item.author}" }
     show_menu
   end
 

@@ -5,10 +5,7 @@ require_relative './students'
 require 'json'
 
 def save_book(title, author)
-  obj = {
-    title: title,
-    author: author
-  }
+  obj = { title: title, author: author }
 
   return unless File.exist?('./books.json')
 
@@ -43,7 +40,6 @@ def load_books
     end
 
     file.close
-
   else
     puts 'Please add books.'
   end
@@ -52,12 +48,7 @@ def load_books
 end
 
 def save_student(name, age, parent_permission)
-  obj = {
-    type: 'Student',
-    name: name,
-    age: age,
-    parent_permission: parent_permission
-  }
+  obj = { type: 'Student', name: name, age: age, parent_permission: parent_permission }
 
   return unless File.exist?('./persons.json')
 
@@ -78,12 +69,7 @@ def save_student(name, age, parent_permission)
 end
 
 def save_teacher(name, age, specialization)
-  obj = {
-    type: 'Teacher',
-    name: name,
-    specialization: specialization,
-    age: age
-  }
+  obj = { type: 'Teacher', name: name, specialization: specialization, age: age }
 
   return unless File.exist?('./persons.json')
 
@@ -146,11 +132,7 @@ def load_rentals
 end
 
 def save_rental(date, persons, book)
-  obj = {
-    date: date,
-    persons: persons.name,
-    book: book.title
-  }
+  obj = { date: date, persons: persons.name, book: book.title }
 
   return unless File.exist?('./rentals.json')
 
