@@ -13,7 +13,7 @@ def save_book(title, author)
   return unless File.exist?('./books.json')
 
   file = File.open('./books.json')
-  if file.size.zero?
+  if file.empty?
     book = [obj]
   else
     book = JSON.parse(File.read('./books.json'))
@@ -31,7 +31,7 @@ def load_books
   if File.exist?('./books.json')
     file = File.open('./books.json')
 
-    if file.size.zero?
+    if file.empty?
       'No book records yet.'
     else
       books = JSON.parse(File.read('./books.json'))
@@ -63,7 +63,7 @@ def save_student(name, age, parent_permission)
 
   file = File.open('./persons.json')
 
-  if file.size.zero?
+  if file.empty?
     student = [obj]
   else
     student = JSON.parse(File.read('./persons.json'))
@@ -89,7 +89,7 @@ def save_teacher(name, age, specialization)
 
   file = File.open('./persons.json')
 
-  if file.size.zero?
+  if file.empty?
     teacher = [obj]
   else
     teacher = JSON.parse(File.read('./persons.json'))
@@ -130,7 +130,7 @@ def load_rentals
   if File.exist?('./rentals.json')
     file = File.open('./rentals.json')
 
-    if file.size.zero?
+    if file.empty?
       puts 'No rentals yet.'
     else
       rentals = JSON.parse(File.read('./rentals.json'))
@@ -156,7 +156,7 @@ def save_rental(date, persons, book)
 
   file = File.open('./rentals.json')
 
-  if file.size.zero?
+  if file.empty?
     rental = [obj]
   else
     rental = JSON.parse(File.read('./rentals.json'))
