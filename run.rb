@@ -1,8 +1,6 @@
-# require './library_menu'
 require './option'
 
 module Run
-  # include LibraryMenu
   include Options
   def run
     puts library_menu
