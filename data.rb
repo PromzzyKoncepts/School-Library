@@ -28,12 +28,12 @@ def load_books
   if File.exist?('./books.json')
     file = File.open('./books.json')
 
-    if file.empty?
+    if file.size == 0
       'No book records yet.'
     else
       books = JSON.parse(File.read('./books.json'))
 
-      books.foreach do |book|
+      books.each do |book|
         book = Book.new(book['title'], book['author'])
         @books << book
       end
@@ -54,7 +54,7 @@ def save_student(name, age, parent_permission)
 
   file = File.open('./persons.json')
 
-  if file.empty?
+  if file.size == 0
     student = [obj]
   else
     student = JSON.parse(File.read('./persons.json'))
@@ -116,7 +116,7 @@ def load_rentals
   if File.exist?('./rentals.json')
     file = File.open('./rentals.json')
 
-    if file.empty?
+    if file.size == 0
       puts 'No rentals yet.'
     else
       rentals = JSON.parse(File.read('./rentals.json'))
@@ -138,7 +138,7 @@ def save_rental(date, persons, book)
 
   file = File.open('./rentals.json')
 
-  if file.empty?
+  if file.size == 0
     rental = [obj]
   else
     rental = JSON.parse(File.read('./rentals.json'))
