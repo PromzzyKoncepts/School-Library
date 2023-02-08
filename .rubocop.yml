@@ -50,3 +50,7 @@ Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
   Enabled: false
+Style/ZeroLengthPredicate:
+  Enabled: false
+Style/StringLiteralsInInterpolation:
+  Enabled: false
