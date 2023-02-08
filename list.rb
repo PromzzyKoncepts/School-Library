@@ -3,7 +3,6 @@ require_relative './data'
 require_relative './creation'
 require_relative './book'
 
-
 class Listings
   include ShowMenu
   def initialize(persons = [], book = [], rental = [])
