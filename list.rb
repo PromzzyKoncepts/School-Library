@@ -1,6 +1,8 @@
 require_relative './menu'
 require_relative './data'
 require_relative './creation'
+require_relative './book'
+
 
 class Listings
   include ShowMenu
@@ -16,14 +18,16 @@ class Listings
   end
 
   def list_books
-    if @book.empty?
+    file = File.open('./books.json')
+    if file.size.zero?
       puts 'No books available'
       show_menu
     end
     puts 'List of available books:'
     puts ''
-    @book.each_with_index do |item, i|
-      puts "#{i} Title: #{item.title}, Author: #{item.author}"
+    books = JSON.parse(File.read('./books.json'))
+    books.each_with_index do |item, i|
+      puts "#{i} Title: #{item["title"]}, Author: #{item["author"]}"
     end
     show_menu
   end
