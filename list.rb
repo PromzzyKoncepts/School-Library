@@ -4,8 +4,8 @@ require_relative './creation'
 
 class Listings
   include ShowMenu
-  def initialize(persons = [], books = [], rental = [])
-    @books = books
+  def initialize(persons = [], book = [], rental = [])
+    @book = book
     @persons = persons
     @rental = rental
   end
@@ -16,13 +16,15 @@ class Listings
   end
 
   def list_books
-    if @books.empty?
+    if @book.empty?
       puts 'No books available'
       show_menu
     end
     puts 'List of available books:'
     puts ''
-    @books.each_with_index { |item, i| puts "#{i} Title: #{item.title}, Author: #{item.author}" }
+    @book.each_with_index do |item, i|
+      puts "#{i} Title: #{item.title}, Author: #{item.author}"
+    end
     show_menu
   end
 
