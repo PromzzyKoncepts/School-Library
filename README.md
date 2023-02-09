@@ -75,7 +75,7 @@ Install this project with:
 
 ```sh
   cd school-library
-  gem install
+  bundle install
 ```
 
 ### Run tests
