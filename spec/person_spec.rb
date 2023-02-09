@@ -7,7 +7,6 @@ describe Person do
 
     it 'expects Margaret age to be 45' do
       expect(person.age).to eq 45
-
     end
     it 'expects Person.name to be Margaret' do
       expect(person.name).to eq 'Margaret'
