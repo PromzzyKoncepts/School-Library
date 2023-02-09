@@ -47,12 +47,18 @@ class Listings
     @persons.each { |item| puts "id: #{item.id}, Person: #{item.name}" }
     print 'Person id: '
     id = gets.chomp.to_i
-    @rental.each do |item|
-      puts '........'
-      puts item.book
-      puts item.person
-      puts '..........'
-      puts "Date: #{item.date}, Book: #{item.book.title} by #{item.book.author}" if item.person.id.to_i == id
+    # @rental.each do |item|
+    #   puts "Date: #{item.date}, Book: #{item.book.title} by #{item.book.author}" if item.person.id.to_i == id
+    # end
+
+    person_details = @persons.find { |person| person.id == id }
+    if person_details
+      puts 'Rentals'
+      person_details.rental.each do |rental|
+        puts "#{rental.date}, Book: #{rental.book.title} by #{rental.book.author}"
+      end
+    else
+      print('There is no rental to display', 'Please create rental record')
     end
     show_menu
   end

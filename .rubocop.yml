@@ -54,3 +54,5 @@ Style/ZeroLengthPredicate:
   Enabled: false
 Style/StringLiteralsInInterpolation:
   Enabled: false
+Lint/ShadowingOuterLocalVariable:
+  Enabled: false
