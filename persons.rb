@@ -5,11 +5,11 @@ require './trimmer_decorator'
 require './capitalize_decorator'
 
 class Person < Nameable
-  def initialize(name, age = 'Unknown', parent_permission: true)
+  def initialize(age, name, parent_permission: true)
     super()
     @id = Random.rand(1..1000)
-    @name = name
     @age = age
+    @name = name
     @parent_permission = parent_permission
     @rental = []
   end
