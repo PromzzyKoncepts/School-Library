@@ -37,17 +37,16 @@ class Creation
 
   def create_rental
     puts 'Select a book from the list (Enter number)'
-    @books.each_with_index { |item, i| puts "#{i}-- #{item.title}, #{item.author}" }
+    @books.each_with_index { |item, index| puts "#{index}-- #{item.title}, #{item.author}" }
     index = gets.chomp.to_i
     book = @books[index]
     puts 'Select a person from the list (Enter number)'
-    @persons.each_with_index { |item, i| puts "#{i}- #{item.name}" }
+    @persons.each_with_index { |item, index| puts "#{index}- #{item.name}" }
     person_index = gets.chomp.to_i
     person = @persons[person_index]
     print 'Date(yyyy/mm/dd): '
     date = gets.chomp
     rental = Rental.new(date, book, person)
-    puts rental
     @rental.push(rental)
     save_rental(date, @persons[person_index], @books[index])
     puts 'Rental created successfully'
@@ -63,9 +62,9 @@ class Creation
     name = gets.chomp
     print 'Has parent permission? [Y/N]'
     permission = gets.chomp
-    new_student = Student.new(age, permission, name)
+    new_student = Student.new(age, name, permission)
     @persons.push(new_student)
-    save_student(name, age, parent_permission: permission)
+    save_student(age, name, parent_permission: permission)
     puts 'Student created successfully'
     show_menu
   end
@@ -77,9 +76,9 @@ class Creation
     name = gets.chomp
     print 'Specialization: '
     specialization = gets.chomp
-    teacher = Teacher.new(age, specialization, name)
+    teacher = Teacher.new(age, name, specialization)
     @persons.push(teacher)
-    save_teacher(name, age, specialization)
+    save_teacher(age, name, specialization)
     puts 'Teacher created successfullly'
     show_menu
   end

@@ -26,9 +26,8 @@ class Listings
     puts ''
     books = JSON.parse(File.read('./books.json'))
     books.each_with_index do |item, i|
-      puts "#{i} Title: #{item["title"]}, Author: #{item["author"]}"
+      puts "#{i}) Title: #{item["title"]}, Author: #{item["author"]}"
     end
-    show_menu
   end
 
   def list_people
@@ -39,9 +38,8 @@ class Listings
     puts 'List of people:'
     puts ''
     @persons.each_with_index do |item, i|
-      puts "#{i}-- [#{item.class}] Name:#{item.name},  Age: #{item.age}"
+      puts "#{i}-- [#{item.class}] Name: '#{item.name}',  Age: #{item.age}"
     end
-    show_menu
   end
 
   def list_rentals
@@ -50,6 +48,10 @@ class Listings
     print 'Person id: '
     id = gets.chomp.to_i
     @rental.each do |item|
+      puts '........'
+      puts item.book
+      puts item.person
+      puts '..........'
       puts "Date: #{item.date}, Book: #{item.book.title} by #{item.book.author}" if item.person.id.to_i == id
     end
     show_menu

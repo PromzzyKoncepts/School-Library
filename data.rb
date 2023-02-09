@@ -51,11 +51,11 @@ def load_books
   @books.each { |b| puts "Book Title: #{b.title}, Book Author: #{b.author}" } unless @books.empty?
 end
 
-def save_student(name, age, parent_permission)
+def save_student(age, name, parent_permission)
   obj = {
     type: 'Student',
-    name: name,
     age: age,
+    name: name,
     parent_permission: parent_permission
   }
 
@@ -77,12 +77,12 @@ def save_student(name, age, parent_permission)
   addfile.close
 end
 
-def save_teacher(name, age, specialization)
+def save_teacher(age, name, specialization)
   obj = {
     type: 'Teacher',
+    age: age,
     name: name,
-    specialization: specialization,
-    age: age
+    specialization: specialization
   }
 
   return unless File.exist?('./persons.json')
@@ -117,7 +117,7 @@ def load_person
         student = Student.new(person['age'], person['name'])
         @persons << student
       else
-        teacher = Teacher.new(person['specialization'], person['age'], person['name'])
+        teacher = Teacher.new(person['age'], person['name'], person['specialization'])
         @persons << teacher
       end
       puts "Name: #{person['name']}, Age: #{person['age']}, [#{person['type']}]"
@@ -136,7 +136,7 @@ def load_rentals
       rentals = JSON.parse(File.read('./rentals.json'))
       puts 'Rented books: '
       rentals.each do |rental|
-        puts "Name: #{rental['people']}, Book: #{rental['book']} on: #{rental['date']}"
+        puts "Name: #{rental['persons']}, Book: #{rental['book']} on: #{rental['date']}"
       end
     end
     file.close
