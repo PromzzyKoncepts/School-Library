@@ -66,7 +66,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```sh
-  git clone git@github.com:myaccount/school-library.git
+  git clone https://github.com/PromzzyKoncepts/School-Library.git
 ```
 
 ### Install
