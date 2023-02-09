@@ -1,4 +1,4 @@
-## Copyright 2021, Promise Okechukwu
+## Copyright 2023, Promise Okechukwu, Belal Gamal
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this web server and associated documentation files, to deal in the web server without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the web server, and to permit persons to whom the web server is furnished to do so, subject to the following conditions:
 
