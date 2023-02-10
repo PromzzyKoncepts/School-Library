@@ -15,5 +15,9 @@ describe Student do
     it 'expect the student be part of a classroom' do
       expect(student.classroom).to eq true
     end
+    it 'confirms if the student can play hookey' do
+      # expect(student.play_hooky).to output('¯(ツ)/¯').to_stdout
+      expect { student.play_hooky }.to output("¯(ツ)/¯\n").to_stdout
+    end
   end
 end
