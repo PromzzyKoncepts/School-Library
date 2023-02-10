@@ -2,7 +2,7 @@ require_relative '../book'
 require_relative '../persons'
 
 describe Person do
-  context 'contains a list of names and ages' do
+  context 'contains names and ages' do
     person = Person.new(45, 'Margaret')
 
     it 'expects Margaret age to be 45' do
